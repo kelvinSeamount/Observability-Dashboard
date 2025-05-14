@@ -1,9 +1,15 @@
+import { Route, Routes } from "react-router-dom"
+import Layout from "./components/layout/Layout"
 
 
 const App = () => {
   return (
-    <div>
-      <h1 className="text-xl text-red-500">Dashboard</h1>
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-200">
+      <Routes>
+        <Route path="/" element={<Layout/>}>
+
+        </Route>
+      </Routes>
     </div>
   )
 }
