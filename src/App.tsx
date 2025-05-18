@@ -2,6 +2,8 @@ import { Route, Routes } from "react-router-dom"
 import Layout from "./components/layout/Layout"
 import LogsPage from "./pages/LogsPage";
 import MetricsPage from "./pages/MetricsPage";
+import Erropage from "./pages/Erropage";
+import LatencyPage from "./pages/LatencyPage";
 
 
 const App = () => {
@@ -11,6 +13,8 @@ const App = () => {
         <Route path="/" element={<Layout />}>
           <Route path="logs" element={<LogsPage />} />
           <Route path="metrics" element={<MetricsPage/>}/>
+          <Route path="errors" element={<Erropage/>}/>
+          <Route path="latency" element={<LatencyPage/>}/>
         </Route>
       </Routes>
     </div>
