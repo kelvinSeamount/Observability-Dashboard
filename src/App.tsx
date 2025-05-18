@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom"
 import Layout from "./components/layout/Layout"
 import LogsPage from "./pages/LogsPage";
+import MetricsPage from "./pages/MetricsPage";
 
 
 const App = () => {
@@ -9,6 +10,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route path="logs" element={<LogsPage />} />
+          <Route path="metrics" element={<MetricsPage/>}/>
         </Route>
       </Routes>
     </div>
