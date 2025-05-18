@@ -1,4 +1,6 @@
+import { Metrics } from "../types";
 import { mockDashboardData } from "./mockdata";
+
 
 const handleError=(error:any)=>{
     console.error('API Error', error)
@@ -41,3 +43,23 @@ export const fetchLogs = async (
     return handleError(error);
   }
 };
+
+//Fetch Metrics
+export const fetchMetrics=async(metricName:string,timeRange:string, filters:Record<string,string>)=>{
+  try {
+    // Building query params
+    const params = new URLSearchParams();
+    params.append("timeRange", timeRange);
+
+     Object.entries(filters).forEach(([key, value]) => {
+       if (value && value !== "all") {
+         params.append(key, value);
+       }
+     });
+    const dashboardData=mockDashboardData(timeRange)
+    const metrics= dashboardData.metrics as Metrics
+    return metrics[metricName] || []
+  } catch (error) {
+    return handleError(error)
+  }
+}
