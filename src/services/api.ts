@@ -1,0 +1,43 @@
+import { mockDashboardData } from "./mockdata";
+
+const handleError=(error:any)=>{
+    console.error('API Error', error)
+    if(error .response){
+        console.error('Response data',error.response.data)
+           console.error("Status:", error.response.status);
+    }else if(error.request){
+        console.error('No response recieved')
+    }else{
+        console.error("Request error:", error.message);
+    }
+    throw error
+}
+
+export const fetchDahboardData = async (timeRange:string)=>{
+    try {
+        return mockDashboardData
+    } catch (error) {
+       return handleError(error) 
+    }
+}
+
+
+export const fetchLogs = async (
+  timeRange: string,
+  filters: Record<string, string>
+) => {
+  try {
+    // Building query params
+    const params = new URLSearchParams();
+    params.append("timeRange", timeRange);
+
+    Object.entries(filters).forEach(([key, value]) => {
+      if (value && value !== "all") {
+        params.append(key, value);
+      }
+    });
+    return mockDashboardData(timeRange).logs;
+  } catch (error) {
+    return handleError(error);
+  }
+};
