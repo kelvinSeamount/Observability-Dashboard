@@ -1,0 +1,76 @@
+{
+  "common": {
+    "dashboard": "Panel",
+    "services": "Servicios",
+    "traces": "Trazas",
+    "metrics": "Métricas",
+    "logs": "Registros",
+    "errors": "Errores",
+    "latency": "Latencia",
+    "darkMode": "Modo oscuro",
+    "signOut": "Cerrar sesión"
+  },
+  "header": {
+    "language": "Idioma",
+    "english": "Inglés",
+    "german": "Alemán",
+    "french": "Francés",
+    "spanish": "Español"
+  },
+  "dashboard": {
+    "systemOverview": "Resumen del Sistema",
+    "requestRate": "Tasa de Solicitudes",
+    "errorRate": "Tasa de Errores",
+    "avgLatency": "Latencia Promedio",
+    "uptime": "Tiempo Activo",
+    "fromPrevious": "desde anterior",
+    "last30Days": "Últimos 30 días",
+    "recentTraces": "Trazas Recientes",
+    "recentLogs": "Registros Recientes",
+    "viewAll": "Ver todo",
+    "reqPerSec": "sol/s"
+  },
+  "services": {
+    "title": "Servicios",
+    "selectService": "Seleccione un servicio",
+    "metrics": "Métricas",
+    "dependencies": "Dependencias",
+    "serviceDependencies": "Dependencias de Servicios",
+    "cpuUsage": "Uso de CPU",
+    "memoryUsage": "Uso de Memoria",
+    "requestThroughput": "Rendimiento de Solicitudes",
+    "serviceMetrics": "Métricas del Servicio",
+    "export": "Exportar"
+  },
+  "errors": {
+    "title": "Análisis de Errores",
+    "errorRateTime": "Tasa de Errores en el Tiempo"
+  },
+  "latency": {
+    "title": "Análisis de Latencia",
+    "responseTime": "Distribución del Tiempo de Respuesta"
+  },
+  "logs": {
+    "title": "Registros",
+    "searchLogs": "Buscar registros...",
+    "allServices": "Todos los Servicios",
+    "allLevels": "Todos los Niveles"
+  },
+  "traces": {
+    "title": "Trazas",
+    "searchTraces": "Buscar trazas...",
+    "allStatus": "Todos los Estados",
+    "success": "Éxito",
+    "warning": "Advertencia",
+    "error": "Error"
+  },
+  "metrics": {
+    "title": "Métricas",
+    "requestRate": "Tasa de Solicitudes",
+    "errorRate": "Tasa de Errores",
+    "latency": "Latencia",
+    "cpuUsage": "Uso de CPU",
+    "memoryUsage": "Uso de Memoria",
+    "throughput": "Rendimiento"
+  }
+}

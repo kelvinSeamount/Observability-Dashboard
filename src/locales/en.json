@@ -1,0 +1,76 @@
+{
+  "common": {
+    "dashboard": "Dashboard",
+    "services": "Services",
+    "traces": "Traces",
+    "metrics": "Metrics",
+    "logs": "Logs",
+    "errors": "Errors",
+    "latency": "Latency",
+    "darkMode": "Dark Mode",
+    "signOut": "Sign out"
+  },
+  "header": {
+    "language": "Language",
+    "english": "English",
+    "german": "German",
+    "french": "French",
+    "spanish": "Spanish"
+  },
+  "dashboard": {
+    "systemOverview": "System Overview",
+    "requestRate": "Request Rate",
+    "errorRate": "Error Rate",
+    "avgLatency": "Avg. Latency",
+    "uptime": "Uptime",
+    "fromPrevious": "from previous",
+    "last30Days": "Last 30 days",
+    "recentTraces": "Recent Traces",
+    "recentLogs": "Recent Logs",
+    "viewAll": "View all",
+    "reqPerSec": "req/s"
+  },
+  "services": {
+    "title": "Services",
+    "selectService": "Select a service to view details",
+    "metrics": "Metrics",
+    "dependencies": "Dependencies",
+    "serviceDependencies": "Service Dependencies",
+    "cpuUsage": "CPU Usage",
+    "memoryUsage": "Memory Usage",
+    "requestThroughput": "Request Throughput",
+    "serviceMetrics": "Service Metrics",
+    "export": "Export"
+  },
+  "errors": {
+    "title": "Error Analysis",
+    "errorRateTime": "Error Rate Over Time"
+  },
+  "latency": {
+    "title": "Latency Analysis",
+    "responseTime": "Response Time Distribution"
+  },
+  "logs": {
+    "title": "Logs",
+    "searchLogs": "Search logs...",
+    "allServices": "All Services",
+    "allLevels": "All Levels"
+  },
+  "traces": {
+    "title": "Traces",
+    "searchTraces": "Search traces...",
+    "allStatus": "All Status",
+    "success": "Success",
+    "warning": "Warning",
+    "error": "Error"
+  },
+  "metrics": {
+    "title": "Metrics",
+    "requestRate": "Request Rate",
+    "errorRate": "Error Rate",
+    "latency": "Latency",
+    "cpuUsage": "CPU Usage",
+    "memoryUsage": "Memory Usage",
+    "throughput": "Throughput"
+  }
+}

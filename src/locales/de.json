@@ -1,0 +1,76 @@
+{
+  "common": {
+    "dashboard": "Dashboard",
+    "services": "Dienste",
+    "traces": "Ablaufverfolgung",
+    "metrics": "Metriken",
+    "logs": "Protokolle",
+    "errors": "Fehler",
+    "latency": "Latenz",
+    "darkMode": "Dunkelmodus",
+    "signOut": "Abmelden"
+  },
+  "header": {
+    "language": "Sprache",
+    "english": "Englisch",
+    "german": "Deutsch",
+    "french": "Französisch",
+    "spanish": "Spanisch"
+  },
+  "dashboard": {
+    "systemOverview": "Systemübersicht",
+    "requestRate": "Anfragerate",
+    "errorRate": "Fehlerrate",
+    "avgLatency": "Durchschn. Latenz",
+    "uptime": "Betriebszeit",
+    "fromPrevious": "im Vergleich",
+    "last30Days": "Letzte 30 Tage",
+    "recentTraces": "Aktuelle Traces",
+    "recentLogs": "Aktuelle Protokolle",
+    "viewAll": "Alle anzeigen",
+    "reqPerSec": "Anf./Sek"
+  },
+  "services": {
+    "title": "Dienste",
+    "selectService": "Wählen Sie einen Dienst aus",
+    "metrics": "Metriken",
+    "dependencies": "Abhängigkeiten",
+    "serviceDependencies": "Dienstabhängigkeiten",
+    "cpuUsage": "CPU-Auslastung",
+    "memoryUsage": "Speichernutzung",
+    "requestThroughput": "Anfragedurchsatz",
+    "serviceMetrics": "Dienstmetriken",
+    "export": "Exportieren"
+  },
+  "errors": {
+    "title": "Fehleranalyse",
+    "errorRateTime": "Fehlerrate über Zeit"
+  },
+  "latency": {
+    "title": "Latenzanalyse",
+    "responseTime": "Reaktionszeit-Verteilung"
+  },
+  "logs": {
+    "title": "Protokolle",
+    "searchLogs": "Protokolle durchsuchen...",
+    "allServices": "Alle Dienste",
+    "allLevels": "Alle Ebenen"
+  },
+  "traces": {
+    "title": "Ablaufverfolgung",
+    "searchTraces": "Traces durchsuchen...",
+    "allStatus": "Alle Status",
+    "success": "Erfolgreich",
+    "warning": "Warnung",
+    "error": "Fehler"
+  },
+  "metrics": {
+    "title": "Metriken",
+    "requestRate": "Anfragerate",
+    "errorRate": "Fehlerrate",
+    "latency": "Latenz",
+    "cpuUsage": "CPU-Auslastung",
+    "memoryUsage": "Speichernutzung",
+    "throughput": "Durchsatz"
+  }
+}

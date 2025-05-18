@@ -1,0 +1,76 @@
+{
+  "common": {
+    "dashboard": "Tableau de bord",
+    "services": "Services",
+    "traces": "Traces",
+    "metrics": "Métriques",
+    "logs": "Journaux",
+    "errors": "Erreurs",
+    "latency": "Latence",
+    "darkMode": "Mode sombre",
+    "signOut": "Déconnexion"
+  },
+  "header": {
+    "language": "Langue",
+    "english": "Anglais",
+    "german": "Allemand",
+    "french": "Français",
+    "spanish": "Espagnol"
+  },
+  "dashboard": {
+    "systemOverview": "Aperçu du système",
+    "requestRate": "Taux de requêtes",
+    "errorRate": "Taux d'erreur",
+    "avgLatency": "Latence moyenne",
+    "uptime": "Disponibilité",
+    "fromPrevious": "par rapport à avant",
+    "last30Days": "30 derniers jours",
+    "recentTraces": "Traces récentes",
+    "recentLogs": "Journaux récents",
+    "viewAll": "Voir tout",
+    "reqPerSec": "req/s"
+  },
+  "services": {
+    "title": "Services",
+    "selectService": "Sélectionnez un service",
+    "metrics": "Métriques",
+    "dependencies": "Dépendances",
+    "serviceDependencies": "Dépendances des services",
+    "cpuUsage": "Utilisation CPU",
+    "memoryUsage": "Utilisation mémoire",
+    "requestThroughput": "Débit des requêtes",
+    "serviceMetrics": "Métriques du service",
+    "export": "Exporter"
+  },
+  "errors": {
+    "title": "Analyse des erreurs",
+    "errorRateTime": "Taux d'erreur dans le temps"
+  },
+  "latency": {
+    "title": "Analyse de la latence",
+    "responseTime": "Distribution du temps de réponse"
+  },
+  "logs": {
+    "title": "Journaux",
+    "searchLogs": "Rechercher dans les journaux...",
+    "allServices": "Tous les services",
+    "allLevels": "Tous les niveaux"
+  },
+  "traces": {
+    "title": "Traces",
+    "searchTraces": "Rechercher des traces...",
+    "allStatus": "Tous les statuts",
+    "success": "Succès",
+    "warning": "Avertissement",
+    "error": "Erreur"
+  },
+  "metrics": {
+    "title": "Métriques",
+    "requestRate": "Taux de requêtes",
+    "errorRate": "Taux d'erreur",
+    "latency": "Latence",
+    "cpuUsage": "Utilisation CPU",
+    "memoryUsage": "Utilisation mémoire",
+    "throughput": "Débit"
+  }
+}
