@@ -12,7 +12,7 @@ const Sidebar = ({open,setOpen}:SidebarProps) => {
   return (
     <aside
       className={`fixed inset-y-0 left-0 z-50 bg-white dark:bg-gray-950 border-r border-gray-200 dark:border-gray-800 transform transition-all duration-200 ease-in-out lg:translate-x-0 lg:static ${
-        open ? "translate-x-0" : "translate-x-full"
+        open ? "translate-x-0" : "-translate-x-full"
       } ${isCollapsed ? "w-16 lg:w-16" : "w-64"}`}
       onMouseEnter={() => setIsCollapsed(false)}
       onMouseLeave={() => setIsCollapsed(true)}
