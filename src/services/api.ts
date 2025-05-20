@@ -1,5 +1,5 @@
 import { Metrics } from "../types";
-import { mockDashboardData } from "./mockdata";
+import { mockDashboardData, mockTraceDetails } from "./mockdata";
 
 
 const handleError=(error:any)=>{
@@ -81,4 +81,13 @@ export const fetchTraces =async(timeRange:string, filters:Record<string, string>
   } catch (error) {
     return handleError(error)
   }
+}
+
+//fetch trace details
+export const fetchTraceDetails =async (traceId:string)=>{
+try {
+  return mockTraceDetails(traceId)
+} catch (error) {
+  return handleError(error)
+}
 }
