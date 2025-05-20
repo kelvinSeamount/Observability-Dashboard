@@ -5,6 +5,7 @@ import MetricsPage from "./pages/MetricsPage";
 import Erropage from "./pages/Erropage";
 import LatencyPage from "./pages/LatencyPage";
 import TracePage from "./pages/TracePage";
+import NotFound from "./pages/NotFound";
 
 
 const App = () => {
@@ -17,6 +18,7 @@ const App = () => {
           <Route path="errors" element={<Erropage />} />
           <Route path="latency" element={<LatencyPage />} />
           <Route path="traces" element={<TracePage />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </div>
