@@ -63,3 +63,22 @@ export const fetchMetrics=async(metricName:string,timeRange:string, filters:Reco
     return handleError(error)
   }
 }
+
+//fetch trace 
+export const fetchTraces =async(timeRange:string, filters:Record<string, string> )=>{
+  try {
+    // Building query params
+    const params = new URLSearchParams();
+    params.append("timeRange", timeRange);
+
+    Object.entries(filters).forEach(([key, value]) => {
+      if (value && value !== "all") {
+        params.append(key, value);
+      }
+    });
+
+    return mockDashboardData(timeRange).traces
+  } catch (error) {
+    return handleError(error)
+  }
+}
