@@ -15,9 +15,9 @@ const handleError=(error:any)=>{
     throw error
 }
 
-export const fetchDahboardData = async (timeRange:string)=>{
+export const fetchDashboardData = async (timeRange:string)=>{
     try {
-        return mockDashboardData
+        return mockDashboardData(timeRange)
     } catch (error) {
        return handleError(error) 
     }
