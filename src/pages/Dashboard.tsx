@@ -5,9 +5,9 @@ import Card, { CardHeader, CardContent } from "../components/ui/Card";
 import TimeRangeSelector from "../components/ui/TimeRangeSelector";
 import MetricsChart from "../components/metrics/MetricsChart";
 import SpanList from "../components/traces/SpanList";
-import LogTable from "../components/logs/LogTable";
 import { fetchDashboardData } from "../services/api";
 import { useTranslation } from "react-i18next";
+import LogTable from "../components/logs/LogTable";
 
 interface DashboardData {
   metrics: {

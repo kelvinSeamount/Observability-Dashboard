@@ -4,10 +4,10 @@ import TimeRangeSelector from "../components/ui/TimeRangeSelector";
 import Card, { CardContent } from "../components/ui/Card";
 import { fetchLogs } from "../services/api";
 import { SERVICES, LOG_LEVELS } from "../config/constants";
-import LogTable from "../components/logs/LogTable";
 import { RefreshCw, Search } from "lucide-react";
 import { useDebounce } from "../hooks/useDebounce";
 import { useTranslation } from "react-i18next";
+import LogTable from "../components/logs/LogTable";
 
 const LogsPage = () => {
   const [timeRange, setTimeRange] = useState("1h");
