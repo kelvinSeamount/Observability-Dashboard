@@ -7,6 +7,7 @@ import LatencyPage from "./pages/LatencyPage";
 import TracePage from "./pages/TracePage";
 import NotFound from "./pages/NotFound";
 import TraceDetail from "./pages/TraceDetail";
+import ServicesPage from "./pages/ServicePage";
 
 
 const App = () => {
@@ -21,6 +22,8 @@ const App = () => {
           <Route path="traces" element={<TracePage />} />
           <Route path="*" element={<NotFound />} />
           <Route path="traces/:traceId" element={<TraceDetail />} />
+          <Route path="services/:serviceId" element={<ServicesPage />} />
+          <Route path="services" element={<ServicesPage />} />
         </Route>
       </Routes>
     </div>
