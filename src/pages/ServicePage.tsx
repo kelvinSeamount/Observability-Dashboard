@@ -120,18 +120,16 @@ const ServicesPage = () => {
        }
        return "warning";
      }
+
+
   return (
     <div className="flex h-[calc(100vh-4rem)]">
-      {/* Left Pane - Service List */}
       <div className="w-80 border-r border-gray-200 dark:border-gray-700">
         <ServiceList services={services} selectedServiceId={serviceId} />
       </div>
-
-      {/* Right Pane */}
       <div className="flex-1 flex flex-col overflow-hidden">
         {serviceId ? (
           <>
-            {/* Top Half - Tabbed Content */}
             <div className="flex-1 overflow-y-auto p-4">
               <Tabs defaultValue="metrics" className="w-full">
                 <TabsList className="w-full justify-start mb-4">
@@ -167,8 +165,6 @@ const ServicesPage = () => {
                 </TabsContent>
               </Tabs>
             </div>
-
-            {/* Bottom Half - Traces */}
             <div className="h-1/2 border-t border-gray-200 dark:border-gray-700 overflow-y-auto">
               {traces && <ServiceTraces traces={traces} />}
             </div>
