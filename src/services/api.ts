@@ -1,5 +1,5 @@
 import { Metrics } from "../types";
-import { mockDashboardData, mockTraceDetails } from "./mockdata";
+import { mockDashboardData, mockServiceDependencies, mockServiceMetrics, mockServiceTraces, mockTraceDetails } from "./mockdata";
 
 
 const handleError=(error:any)=>{
@@ -90,4 +90,34 @@ try {
 } catch (error) {
   return handleError(error)
 }
+}
+
+//fetch service metrics
+export const fetchServiceMetrics = async(serviceId:string, timeRange:string) =>{
+try {
+  const params = new URLSearchParams()
+  params.append('timeRange',timeRange)
+  return mockServiceMetrics(serviceId)
+} catch (error) {
+  return handleError(error)
+}
+}
+
+
+//fetch service dependencies
+export const fetchServiceDependencies = async(serviceId:string)=>{
+try {
+  return mockServiceDependencies(serviceId)
+} catch (error) {
+  return handleError(error)
+}
+}
+
+
+export const fetchServiceTraces = async(serviceId:string)=>{
+  try {
+    return mockServiceTraces(serviceId)
+  } catch (error) {
+    return handleError(error)
+  }
 }
