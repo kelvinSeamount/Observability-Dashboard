@@ -7,7 +7,7 @@ import MetricsChart from "../components/metrics/MetricsChart";
 import SpanList from "../components/traces/SpanList";
 import { fetchDashboardData } from "../services/api";
 import { useTranslation } from "react-i18next";
-import LogTable from "../components/logs/LogTable";
+import LogTable from "../components/log/LogTable";
 
 interface DashboardData {
   metrics: {
@@ -49,10 +49,10 @@ const Dashboard = () => {
 
   const { data, isLoading, error } = useQuery<DashboardData>({
     queryKey: ["dashboard", timeRange],
-    queryFn: async () =>{
+    queryFn: async () => {
       const result = await fetchDashboardData(timeRange);
-      return result as unknown as DashboardData
-    } 
+      return result as unknown as DashboardData;
+    },
   });
 
   if (isLoading) {

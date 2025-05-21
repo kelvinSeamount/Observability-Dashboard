@@ -7,14 +7,14 @@ import { SERVICES, LOG_LEVELS } from "../config/constants";
 import { RefreshCw, Search } from "lucide-react";
 import { useDebounce } from "../hooks/useDebounce";
 import { useTranslation } from "react-i18next";
-import LogTable from "../components/logs/LogTable";
+import LogTable from "../components/log/LogTable";
 
 const LogsPage = () => {
   const [timeRange, setTimeRange] = useState("1h");
   const [service, setService] = useState("all");
   const [level, setLevel] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
-    const { t } = useTranslation();
+  const { t } = useTranslation();
 
   // Debounce search query to avoid too many API calls
   const debouncedSearch = useDebounce(searchQuery, 300);
