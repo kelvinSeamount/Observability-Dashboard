@@ -39,97 +39,79 @@ const generateDataPoints = (
 
 // Generate mock traces
 const generateTraces = (count: number) => {
-  const services = [
-    "api-gateway",
-    "user-service",
-    "product-service",
-    "payment-service",
-    "notification-service",
-  ];
-  const statuses = ["success", "error", "warning"];
+  const services = ['api-gateway', 'user-service', 'product-service', 'payment-service', 'notification-service'];
   const traces = [];
-
+  
   for (let i = 0; i < count; i++) {
     const traceId = `trace-${Math.random().toString(36).substr(2, 9)}`;
     const service = services[Math.floor(Math.random() * services.length)];
-    const status =
-      Math.random() > 0.8
-        ? "error"
-        : Math.random() > 0.7
-        ? "warning"
-        : "success";
+    const status = Math.random() > 0.8 
+      ? 'error' 
+      : Math.random() > 0.7 
+        ? 'warning' 
+        : 'success';
     const duration = Math.random() * 500 + 20; // 20-520ms
-
+    
     traces.push({
       id: `span-${Math.random().toString(36).substr(2, 9)}`,
       traceId,
-      name: `${service} ${i % 2 === 0 ? "GET" : "POST"} request`,
+      name: `${service} ${i % 2 === 0 ? 'GET' : 'POST'} request`,
       service,
       duration,
       timestamp: new Date(Date.now() - Math.random() * 3600000).toISOString(),
       status,
     });
   }
-
+  
   return traces;
 };
 
 // Generate mock logs
 const generateLogs = (count: number) => {
-  const services = [
-    "api-gateway",
-    "user-service",
-    "product-service",
-    "payment-service",
-    "notification-service",
-  ];
-  const levels = ["info", "warn", "error", "debug"];
+  const services = ['api-gateway', 'user-service', 'product-service', 'payment-service', 'notification-service'];
   const messages = [
-    "Request processed successfully",
-    "Database query completed",
-    "Authentication succeeded",
-    "User session created",
-    "Payment processed",
-    "Failed to connect to database",
-    "Request timeout",
-    "API rate limit exceeded",
-    "Invalid authentication token",
-    "Resource not found",
+    'Request processed successfully',
+    'Database query completed',
+    'Authentication succeeded',
+    'User session created',
+    'Payment processed',
+    'Failed to connect to database',
+    'Request timeout',
+    'API rate limit exceeded',
+    'Invalid authentication token',
+    'Resource not found',
   ];
-
+  
   const logs = [];
-
+  
   for (let i = 0; i < count; i++) {
     const service = services[Math.floor(Math.random() * services.length)];
-    let level = "info";
-
+    let level = 'info';
+    
     // Distribution: 60% info, 20% warn, 15% error, 5% debug
     const rand = Math.random();
-    if (rand > 0.95) level = "debug";
-    else if (rand > 0.8) level = "error";
-    else if (rand > 0.6) level = "warn";
-
+    if (rand > 0.95) level = 'debug';
+    else if (rand > 0.8) level = 'error';
+    else if (rand > 0.6) level = 'warn';
+    
     // Select message based on level
-    let message = "";
-    if (level === "error") {
-      message = messages.slice(5).at(Math.floor(Math.random() * 5)) || "";
+    let message = '';
+    if (level === 'error') {
+      message = messages.slice(5).at(Math.floor(Math.random() * 5)) || '';
     } else {
-      message = messages.slice(0, 5).at(Math.floor(Math.random() * 5)) || "";
+      message = messages.slice(0, 5).at(Math.floor(Math.random() * 5)) || '';
     }
-
+    
     // Add some randomization to the message
     const suffix = Math.random().toString(36).substring(2, 10);
     message = `${message} (${suffix})`;
-
-    const metadata =
-      level !== "info"
-        ? {
-            requestId: `req-${Math.random().toString(36).substring(2, 10)}`,
-            userId: Math.floor(Math.random() * 1000),
-            duration: Math.floor(Math.random() * 500),
-          }
-        : undefined;
-
+    
+    const metadata = level !== 'info' ? {
+      requestId: `req-${Math.random().toString(36).substring(2, 10)}`,
+      userId: Math.floor(Math.random() * 1000),
+      duration: Math.floor(Math.random() * 500),
+    } : undefined;
+    
     logs.push({
       id: `log-${Math.random().toString(36).substr(2, 9)}`,
       timestamp: new Date(Date.now() - Math.random() * 3600000).toISOString(),
@@ -139,18 +121,15 @@ const generateLogs = (count: number) => {
       metadata,
     });
   }
-
+  
   // Sort by timestamp (newest first)
-  return logs.sort(
-    (a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime()
-  );
+  return logs.sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime());
 };
 
 // Dashboard data
 export const mockDashboardData = (timeRange: string) => {
   // Generate metrics based on time range
   const getPointCount =(range:string):number=>{
-
  switch (range) {
    case "15m":
      return 15;
@@ -422,60 +401,53 @@ export const mockTraceDetails = (traceId: string) => {
 
 // Mock service metrics
 export const mockServiceMetrics = (serviceId: string) => {
+  const baselineMultiplier = serviceId === 'api-gateway' ? 1.5 :
+  serviceId === 'user-service' ? 0.8 : 
+  serviceId === 'payment-service' ? 1.2 : 
+  1.0; 
+
   return {
-    cpu: generateDataPoints(30, 20, 80, "up"),
-    memory: generateDataPoints(30, 30, 90, "stable"),
-    errorRate: generateDataPoints(30, 0, 8, "down"),
-    throughput: generateDataPoints(30, 50, 500, "up"),
+    cpu: generateDataPoints(30, 20 * baselineMultiplier, 80 * baselineMultiplier, 'up'),
+    memory: generateDataPoints(30, 30 * baselineMultiplier, 90 * baselineMultiplier, 'stable'),
+    errorRate: generateDataPoints(30, 0, 8 * baselineMultiplier, 'down'),
+    throughput: generateDataPoints(30, 50 * baselineMultiplier, 500 * baselineMultiplier, 'up'),
   };
 };
 
 // Mock service dependencies
 export const mockServiceDependencies = (serviceId: string) => {
-  const services = [
-    { id: "api-gateway", name: "API Gateway", health: "healthy" },
-    { id: "user-service", name: "User Service", health: "healthy" },
-    { id: "product-service", name: "Product Service", health: "warning" },
-    { id: "payment-service", name: "Payment Service", health: "error" },
-    {
-      id: "notification-service",
-      name: "Notification Service",
-      health: "healthy",
-    },
+  const allServices = [
+    { id: 'api-gateway', name: 'API Gateway', health: 'healthy' },
+    { id: 'user-service', name: 'User Service', health: 'healthy' },
+    { id: 'product-service', name: 'Product Service', health: 'warning' },
+    { id: 'payment-service', name: 'Payment Service', health: 'error' },
+    { id: 'notification-service', name: 'Notification Service', health: 'healthy' },
   ];
 
-  const dependencies = [
-    {
-      source: "api-gateway",
-      target: "user-service",
-      type: "http",
-      latency: 45,
-      errorRate: 0.5,
-    },
-    {
-      source: "api-gateway",
-      target: "product-service",
-      type: "http",
-      latency: 65,
-      errorRate: 1.2,
-    },
-    {
-      source: "product-service",
-      target: "payment-service",
-      type: "grpc",
-      latency: 120,
-      errorRate: 2.5,
-    },
-    {
-      source: "payment-service",
-      target: "notification-service",
-      type: "kafka",
-      latency: 250,
-      errorRate: 0.8,
-    },
+  const allDependencies = [
+    { source: 'api-gateway', target: 'user-service', type: 'http', latency: 45, errorRate: 0.5 },
+    { source: 'api-gateway', target: 'product-service', type: 'http', latency: 65, errorRate: 1.2 },
+    { source: 'product-service', target: 'payment-service', type: 'grpc', latency: 120, errorRate: 2.5 },
+    { source: 'payment-service', target: 'notification-service', type: 'kafka', latency: 250, errorRate: 0.8 },
   ];
 
-  return { services, dependencies };
+  // Filter dependencies based on serviceId
+  const relevantDependencies = allDependencies.filter(dep => 
+    dep.source === serviceId || dep.target === serviceId
+  );
+
+  // Get unique service IDs from filtered dependencies
+  const relevantServiceIds = new Set([
+    ...relevantDependencies.map(dep => dep.source),
+    ...relevantDependencies.map(dep => dep.target)
+  ]);
+
+  // Filter services to only include those in dependencies
+  const services = allServices.filter(service => 
+    relevantServiceIds.has(service.id)
+  );
+
+  return { services, dependencies: relevantDependencies };
 };
 
 // Mock service traces
