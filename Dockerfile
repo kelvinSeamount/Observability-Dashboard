@@ -1,7 +1,20 @@
-FROM nginx:stable-alpine
+FROM node:18-alpine
 
-COPY dist/ /usr/share/nginx/html
+WORKDIR /app
 
-COPY src/nginx.conf /etc/nginx/conf.d/default.conf
+RUN apk add --no-cache curl
 
-EXPOSE 80
+COPY package.json package-lock.json ./
+
+RUN npm ci
+
+COPY . .
+
+RUN npm run  build
+
+EXPOSE 4173
+
+HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3\
+  CMD curl -f http://localhost:4173/ || exit 1
+
+CMD ["npm", "run", "preview", "--", "--host", "0.0.0.0" ]  
