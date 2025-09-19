@@ -1,7 +1,7 @@
-🚀 Overview
-Observability Dashboard, A high-performance React observability platform that delivers real-time monitoring, logging, metrics visualization, and distributed tracing for microservices, enabling teams to troubleshoot swiftly and understand their systems deeply.
+Overview
+Observability Dashboard demo, A high-performance React observability platform that delivers real-time monitoring, logging, metrics visualization, and distributed tracing for microservices, enabling teams to troubleshoot swiftly and understand their systems deeply.
 
-📊 Metrics Visualization
+Metrics Visualization
 
 Real-time monitoring of key system metrics
 Customizable time ranges for data analysis
@@ -15,14 +15,14 @@ CPU Usage
 Memory Usage
 Throughput
 
-📝 Centralized Logging
+Centralized Logging
 
 Advanced log filtering by service and log level
 Full-text search capabilities
 Real-time log refreshing
 Customizable time ranges for targeted analysis
 
-🔍 Distributed Tracing
+Distributed Tracing
 
 End-to-end request visualization
 Service dependency mapping
@@ -30,14 +30,14 @@ Detailed span analysis with timing breakdowns
 Trace filtering by service and status
 Deep trace inspection with span timeline visualization
 
-🧩 Service Topology
+Service Topology
 
 Visual representation of service dependencies
 Service health monitoring
 Performance metrics by service
 Detailed service metrics with customizable views
 
-🛠️ Technology Stack
+Technology Stack
 
 Frontend Framework: React with TypeScript
 State Management: React Query for server state
