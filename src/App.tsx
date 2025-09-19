@@ -15,7 +15,7 @@ const App = () => {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-200">
       <Routes>
-        <Route path="/" element={<Layout />}>
+        <Route path="/Observability-Dashboard" element={<Layout />}>
           <Route index element={<Dashboard />} />
           <Route path="logs" element={<LogsPage />} />
           <Route path="metrics" element={<MetricsPage />} />
